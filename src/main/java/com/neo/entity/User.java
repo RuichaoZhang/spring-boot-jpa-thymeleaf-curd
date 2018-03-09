@@ -7,8 +7,6 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 public class User {
 	@Id
@@ -18,7 +16,6 @@ public class User {
     @Column(nullable = false, unique = true)
     private String userName;
     @Column(nullable = false)
-    @JsonIgnore
     private String password;
     @Column(nullable = false)
     private int age;

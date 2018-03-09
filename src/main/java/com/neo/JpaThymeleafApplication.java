@@ -1,5 +1,8 @@
 package com.neo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +26,22 @@ public class JpaThymeleafApplication extends SpringBootServletInitializer {
 
 	public @PostConstruct void init() {
 		repository.deleteAll();
-		User user = new User();
-		user.setAge(12);
-		user.setPassword("123456");
-		user.setUserName("admin");
-		user.setUserType("admin");
-		repository.save(user);
+		List<User> list = new ArrayList<>();
+		for (int i = 0; i < 20; i++) {
+			User user = new User();
+			user.setAge(12);
+			user.setPassword("123456");
+			if(i==0) {
+				user.setUserName("admin");
+			}else {
+				user.setUserName("admin"+i);
+			}
+			
+			user.setUserType("admin");
+			list.add(user);
+			
+		}
+		repository.save(list);
 	}
     public static void main(String[] args) throws Exception {
         SpringApplication.run(JpaThymeleafApplication.class, args);

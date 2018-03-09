@@ -2,7 +2,7 @@ package com.neo.json;
 
 public class AjaxJson {
 	private Object object;
-	private String success;
+	private boolean success;
 	private String message;
 	public Object getObject() {
 		return object;
@@ -10,10 +10,10 @@ public class AjaxJson {
 	public void setObject(Object object) {
 		this.object = object;
 	}
-	public String getSuccess() {
+	public boolean getSuccess() {
 		return success;
 	}
-	public void setSuccess(String success) {
+	public void setSuccess(boolean success) {
 		this.success = success;
 	}
 	public String getMessage() {
@@ -22,6 +22,5 @@ public class AjaxJson {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
 	
 }
