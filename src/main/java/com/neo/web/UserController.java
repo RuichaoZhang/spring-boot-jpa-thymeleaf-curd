@@ -110,4 +110,21 @@ public class UserController {
 		return j;
 	}
 
+	
+	@RequestMapping(value = "/checkUserExits", method = RequestMethod.GET)
+	@ResponseBody
+	public AjaxJson checkUserExits(HttpServletRequest request, HttpServletResponse response) {
+		AjaxJson j = new AjaxJson();
+		String userName = request.getParameter("userName");
+		if(userService.checkUserExits(userName)) {
+			j.setSuccess(false);
+			j.setMessage(Const.REGISTER_ERROR);
+			
+		}else {
+			j.setSuccess(true);
+			j.setMessage(Const.REGISTER_SUCCESS);
+		}
+		return j;
+	}
+	
 }

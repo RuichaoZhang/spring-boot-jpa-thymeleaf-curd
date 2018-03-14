@@ -7,7 +7,9 @@ import java.util.List;
 public interface UserService {
 
     public List<User> getUserList();
-
+    
+    public boolean checkUserExits(String userName);
+    
     public User findUserById(long id);
     
     public User findUserByToken(String id);

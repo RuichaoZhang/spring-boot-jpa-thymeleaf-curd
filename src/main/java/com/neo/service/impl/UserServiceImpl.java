@@ -48,6 +48,11 @@ public class UserServiceImpl implements UserService{
 	public User findByuserNameAndpassword(String userName, String password) {
 		return userRepository.findByUserNameAndPassword(userName, password);
 	}
+
+	@Override
+	public boolean checkUserExits(String userName) {
+		return userRepository.findByUserName(userName)!=null ? true : false;
+	}
 }
 
 

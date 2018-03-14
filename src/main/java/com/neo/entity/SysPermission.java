@@ -6,7 +6,10 @@ import java.util.List;
 
 @Entity
 public class SysPermission implements Serializable {
-    @Id@GeneratedValue
+
+	private static final long serialVersionUID = -2674493470037239880L;
+	
+	@Id@GeneratedValue
     private Integer id;//主键.
     private String name;//名称.
     @Column(columnDefinition="enum('menu','button')")
